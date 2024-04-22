@@ -130,7 +130,16 @@ dependencies {
     implementation fg.deobf("curse.maven:patchouli-306770:4636277")
 
 
-    implementation fg.deobf("curse.maven:terrafirmacraft-302973:5065718")
+    implementation fg.deobf("curse.maven:terrafirmacraft-302973:5271007")
+
+
+    implementation fg.deobf("curse.maven:mouse-tweaks-60089:4581240")
+
+    implementation fg.deobf("curse.maven:rhino-416294:4944325")
+
+    implementation fg.deobf("curse.maven:architectury-api-419699:5137938")
+
+    implementation fg.deobf("curse.maven:kubejs-238086:5268032")
 
 }
 

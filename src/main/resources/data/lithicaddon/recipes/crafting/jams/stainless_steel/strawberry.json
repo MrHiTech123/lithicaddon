@@ -1,0 +1,25 @@
+{
+  "__comment__": "This file was automatically created by redstoneguy10ls",
+  "type": "lithicaddon:jar_recipe",
+    "break_chance": 0.25,
+    "lid": [
+      {
+        "item": "lithicaddon:stainless_steel_lid"
+      }
+    ],
+    "recipe":{
+      "type": "minecraft:crafting_shapeless",
+      "ingredients": [
+        {
+          "type": "tfc:not_rotten",
+          "ingredient": {
+            "item": "lithicaddon:stainless_steel_jar/strawberry"
+          }
+        }
+      ],
+      "result": {
+        "item": "tfc:jar/strawberry_unsealed"
+      }
+    }
+}
+  

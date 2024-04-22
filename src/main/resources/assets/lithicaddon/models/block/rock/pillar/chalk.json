@@ -1,0 +1,25 @@
+{
+	"credit": "Made with Blockbench",
+  "parent": "lithicaddon:block/rock/base_block",
+	"textures": {
+        
+		"3": "lithicaddon:block/rock/pillar/chalktop",
+		"4": "lithicaddon:block/rock/pillar/chalk",
+        "particle": "tfc:block/rock/raw/chalk"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#4"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#4"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#4"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#4"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#3"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#3"}
+			}
+		}
+	]
+}
+  

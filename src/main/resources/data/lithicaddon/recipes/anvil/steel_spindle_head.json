@@ -1,0 +1,18 @@
+{
+  "__comment__": "This file was automatically created by redstoneguy10ls",
+  "type": "tfc:anvil",
+  "input": {
+    "tag": "forge:ingots/steel"
+  },
+  "result": {
+    "item": "lithicaddon:metal_spindle_head/steel"
+  },
+  "tier": 4,
+  "rules": [
+    "punch_last",
+    "draw_not_last",
+    "draw_not_last"
+  ],
+  "apply_forging_bonus": true
+}
+  

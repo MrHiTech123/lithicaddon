@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tfc:empty_jar"
+    },
+    {
+      "item": "lithicaddon:aluminum_lid"
+    }
+  ],
+  "result": {
+    "item": "lithicaddon:empty_jar_with_aluminum_lid"
+  }
+}

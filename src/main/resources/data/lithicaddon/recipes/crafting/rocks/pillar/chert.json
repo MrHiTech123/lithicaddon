@@ -1,0 +1,17 @@
+{
+  "__comment__": "This file was automatically created by redstoneguy10ls",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X",
+    "X"
+  ],
+  "key": {
+    "X": {
+      "item": "tfc:rock/raw/chert_slab"
+    }
+  },
+  "result": {
+    "item": "lithicaddon:rock/pillar/chert",
+    "count": 1
+  }
+}             

@@ -1,8 +1,11 @@
 package com.redstoneguy10ls.lithicaddon;
 
 import com.mojang.logging.LogUtils;
+import com.redstoneguy10ls.lithicaddon.common.blocks.lithicBlocks;
+import com.redstoneguy10ls.lithicaddon.common.fluids.lithicFluids;
 import com.redstoneguy10ls.lithicaddon.common.items.lithicItems;
 import com.redstoneguy10ls.lithicaddon.common.items.lithicTab;
+import com.redstoneguy10ls.lithicaddon.common.recipe.LithicRecipeSerializer;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -14,6 +17,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.fml.loading.FMLEnvironment;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -26,15 +30,25 @@ public class LithicAddon
     private static final Logger LOGGER = LogUtils.getLogger();
     public LithicAddon()
     {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        modEventBus.addListener(this::commonSetup);
+        bus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
-        modEventBus.addListener(this::addCreative);
+        bus.addListener(this::addCreative);
 
-        lithicItems.ITEMS.register(modEventBus);
-        lithicTab.CREATIVE_TABS.register(modEventBus);
+        lithicItems.ITEMS.register(bus);
+        lithicTab.CREATIVE_TABS.register(bus);
+        lithicBlocks.BLOCKS.register(bus);
+        lithicFluids.FLUIDS.register(bus);
+
+        LithicRecipeSerializer.RECIPE_SERIALIZERS.register(bus);
+
+        if(FMLEnvironment.dist == Dist.CLIENT)
+        {
+            ClientEventHandler.init();
+
+        }
 
     }
 

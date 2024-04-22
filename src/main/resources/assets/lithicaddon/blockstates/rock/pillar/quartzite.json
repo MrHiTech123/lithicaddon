@@ -1,0 +1,16 @@
+{
+  "__comment__": "This file was automatically created by redstoneguy10ls",
+    "variants": {
+      "axis=x": {
+      "model": "lithicaddon:block/rock/pillar/quartzite_horizontal",
+      "y": 90
+    },
+    "axis=y": {
+      "model": "lithicaddon:block/rock/pillar/quartzite"
+    },
+    "axis=z": {
+      "model": "lithicaddon:block/rock/pillar/quartzite_horizontal"
+    }
+  }
+}
+  

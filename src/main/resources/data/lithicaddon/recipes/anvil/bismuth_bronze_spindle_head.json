@@ -1,0 +1,18 @@
+{
+  "__comment__": "This file was automatically created by redstoneguy10ls",
+  "type": "tfc:anvil",
+  "input": {
+    "tag": "forge:ingots/bismuth_bronze"
+  },
+  "result": {
+    "item": "lithicaddon:metal_spindle_head/bismuth_bronze"
+  },
+  "tier": 2,
+  "rules": [
+    "punch_last",
+    "draw_not_last",
+    "draw_not_last"
+  ],
+  "apply_forging_bonus": true
+}
+  

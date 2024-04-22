@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "lithicaddon:metal_spindle/bismuth_bronze",
+    "lithicaddon:metal_spindle/black_bronze",
+    "lithicaddon:metal_spindle/black_steel",
+    "lithicaddon:metal_spindle/blue_steel",
+    "lithicaddon:metal_spindle/bronze",
+    "lithicaddon:metal_spindle/copper",
+    "lithicaddon:metal_spindle/red_steel",
+    "lithicaddon:metal_spindle/steel",
+    "lithicaddon:metal_spindle/wrought_iron",
+    "tfc:spindle"
+  ]
+}

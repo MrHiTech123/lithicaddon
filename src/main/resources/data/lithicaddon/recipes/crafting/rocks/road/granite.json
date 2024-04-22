@@ -1,0 +1,21 @@
+{
+  "__comment__": "This file was automatically created by redstoneguy10ls",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BMB",
+    "MMM",
+    "BMB"
+  ],
+  "key": {
+    "B": {
+      "item": "tfc:mortar"
+    },
+    "M": {
+      "item": "tfc:brick/granite"
+    }
+  },
+  "result": {
+    "item": "lithicaddon:rock/road/granite",
+    "count": 1
+  }
+}             

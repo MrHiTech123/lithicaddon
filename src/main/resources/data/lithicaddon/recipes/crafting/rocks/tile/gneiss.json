@@ -1,0 +1,21 @@
+{
+  "__comment__": "This file was automatically created by redstoneguy10ls",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BMB",
+    "MMM",
+    "BMB"
+  ],
+  "key": {
+    "M": {
+      "item": "tfc:mortar"
+    },
+    "B": {
+      "item": "tfc:brick/gneiss"
+    }
+  },
+  "result": {
+    "item": "lithicaddon:rock/tile/gneiss",
+    "count": 1
+  }
+}             
