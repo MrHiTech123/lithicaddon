@@ -1,0 +1,18 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "immersiveengineering"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "lithicaddon:aluminum_lid"
+  },
+  "result_fluid": {
+    "fluid": "tfc_ie_addon:metal/aluminum",
+    "amount": 6
+  },
+  "temperature": 650
+}

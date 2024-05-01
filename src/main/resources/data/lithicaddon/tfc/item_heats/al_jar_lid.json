@@ -1,0 +1,9 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "ingredient": {
+    "item": "lithicaddon:aluminum_lid"
+  },
+  "heat_capacity": 0.857,
+  "forging_temperature": 390,
+  "welding_temperature": 520
+}
