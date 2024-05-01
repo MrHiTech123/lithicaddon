@@ -38,15 +38,15 @@ public class lithicTab {
         lithicItems.METAL_SPINDLES.values().forEach(reg -> accept(out, reg));
         lithicItems.SPINDLE_HEADS.values().forEach(reg -> accept(out, reg));
 
-        //accept(out, lithicItems.ALUMINUM_LID);
-        //accept(out, lithicItems.STAINLESS_STEEL_LID);
-        //accept(out, lithicItems.EMPTY_JAR_WITH_ALUMINUM_LID);
-        //accept(out, lithicItems.EMPTY_JAR_WITH_STAINLESS_STEEL_LID);
+        accept(out, lithicItems.ALUMINUM_LID);
+        accept(out, lithicItems.STAINLESS_STEEL_LID);
+        accept(out, lithicItems.EMPTY_JAR_WITH_ALUMINUM_LID);
+        accept(out, lithicItems.EMPTY_JAR_WITH_STAINLESS_STEEL_LID);
 
         for(Food food : Food.values())
         {
-            //accept(out, lithicItems.FRUIT_PRESERVES_ALUMINUM, food);
-            //accept(out, lithicItems.FRUIT_PRESERVES_STAINLESS_STEEL, food);
+            accept(out, lithicItems.FRUIT_PRESERVES_ALUMINUM, food);
+            accept(out, lithicItems.FRUIT_PRESERVES_STAINLESS_STEEL, food);
 
         }
         lithicItems.METAL_FLUIDS_BUCKETS.values().forEach(reg -> accept(out, reg));

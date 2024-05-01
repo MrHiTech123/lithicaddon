@@ -1,0 +1,23 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "conditions": [
+  {
+  "type": "forge:mod_loaded",
+  "modid": "immersiveengineering"
+  }
+  ],
+  "type": "tfc:anvil",
+  "input": {
+    "tag": "forge:ingots/aluminum"
+  },
+  "result": {
+    "item": "lithicaddon:aluminum_lid",
+    "count": 16
+  },
+  "tier": 1,
+  "rules": [
+    "hit_last",
+    "hit_second_last",
+    "punch_third_last"
+  ]
+}

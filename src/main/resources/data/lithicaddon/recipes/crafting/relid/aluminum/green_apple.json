@@ -1,0 +1,19 @@
+{
+  "__comment__": "This file was automatically created by redstoneguy10ls",
+      "type": "minecraft:crafting_shapeless",
+      "ingredients": [
+        {
+          "type": "tfc:not_rotten",
+          "ingredient": {
+            "item": "tfc:jar/green_apple_unsealed"
+          }
+        },
+        {
+          "item": "lithicaddon:aluminum_lid"
+        }
+      ],
+      "result": {
+        "item": "lithicaddon:aluminum_jar/green_apple"
+      }
+}
+  

@@ -1,0 +1,45 @@
+{
+  "__comment__": "This file was automatically created by redstoneguy10ls",
+  "type": "tfc:pot_jam",
+  "ingredients": [
+    {
+      "type": "tfc:not_rotten",
+      "ingredient": {
+        "item": "tfc:food/blackberry"
+      }
+    },
+    {
+      "type": "tfc:not_rotten",
+      "ingredient": {
+        "item": "tfc:food/blackberry"
+      }
+    },
+    {
+      "type": "tfc:not_rotten",
+      "ingredient": {
+        "item": "tfc:food/blackberry"
+      }
+    },
+    {
+      "type": "tfc:not_rotten",
+      "ingredient": {
+        "item": "tfc:food/blackberry"
+      }
+    },
+    {
+      "tag": "tfc:sweetener"
+    }
+  ],
+  "fluid_ingredient": {
+    "ingredient": "minecraft:water",
+    "amount": 100
+  },
+  "duration": 500,
+  "temperature": 300,
+  "result": {
+    "item": "tfc:jar/blackberry_unsealed",
+    "count": 4
+  },
+  "texture": "tfc:block/jar/blackberry"
+}
+  

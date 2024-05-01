@@ -1,0 +1,13 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "ingredient": [
+    {
+      "item": "lithicaddon:empty_jar_with_aluminum_lid"
+    },
+    {
+      "item": "lithicaddon:empty_jar_with_stainless_steel_lid"
+    }
+  ],
+  "size": "tiny",
+  "weight": "medium"
+}

@@ -1,0 +1,22 @@
+{
+  "__comment__": "This file was automatically created by redstoneguy10ls",
+  "type": "lithicaddon:jar_recipe",
+    "break_chance": 0.25,
+    "lid": [
+      {
+        "item": "lithicaddon:stainless_steel_lid"
+      }
+    ],
+    "recipe":{
+      "type": "minecraft:crafting_shapeless",
+      "ingredients": [
+        {
+            "item": "lithicaddon:empty_jar_with_stainless_steel_lid"
+        }
+      ],
+      "result": {
+        "item": "tfc:empty_jar"
+      }
+    }
+}
+  
