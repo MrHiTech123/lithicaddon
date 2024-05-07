@@ -126,6 +126,21 @@
   "block.lithicaddon.rock.tile.slate" :  "Slate Tile",
   "block.lithicaddon.rock.road.slate" :  "Slate Road",
 
+  "item.lithicaddon.bucket.silver_halide": "Bucket of Silver Halide",
+  "item.lithicaddon.bucket.nitric": "Bucket of Nitric Acid",
+
+  "fluid.lithic.acid.silver_halide": "Silver Halide",
+  "fluid.lithic.acid.nitric": "Nitric Acid",
+
+  "item.lithicaddon.bucket.volcanic": "Bucket of Molten Volcanic Glass",
+  "item.lithicaddon.bucket.silica":   "Bucket of Molten Silica Glass",
+  "item.lithicaddon.bucket.olivine":  "Bucket of Molten Olivine Glass",
+  "item.lithicaddon.bucket.hematic":  "Bucket of Molten Hematic Glass",
+
+  "fluid.lithic.glass.volcanic": "Molten Volcanic Glass",
+  "fluid.lithic.glass.silica": "Molten Silica Glass",
+  "fluid.lithic.glass.olivine": "Molten Olivine Glass",
+  "fluid.lithic.glass.hematic": "Molten Hematic Glass",
 
   "lithicaddon.creative_tab.lithic": "Lithic Addon Tab"
 }

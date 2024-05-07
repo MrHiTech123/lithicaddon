@@ -50,6 +50,8 @@ public class lithicTab {
 
         }
         lithicItems.METAL_FLUIDS_BUCKETS.values().forEach(reg -> accept(out, reg));
+        lithicItems.ACID_FLUIDS_BUCKETS.values().forEach(reg -> accept(out, reg));
+        lithicItems.GLASS_FLUIDS_BUCKETS.values().forEach(reg -> accept(out, reg));
 
 
 

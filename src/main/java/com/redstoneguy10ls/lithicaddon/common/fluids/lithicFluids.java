@@ -62,13 +62,44 @@ public final class lithicFluids {
             MoltenFluid.Flowing::new
     ));
 
+    public static final Map<lithicAcids, FluidRegistryObject<ForgeFlowingFluid>> ACIDS = Helpers.mapOfKeys(lithicAcids.class, acid
+            -> register(
+            "acid/" + acid.getId(),
+            properties -> properties
+                    .block(lithicBlocks.ACID_FLUIDS.get(acid))
+                    .bucket(lithicItems.ACID_FLUIDS_BUCKETS.get(acid))
+                    .explosionResistance(100),
+            lavaLike()
+                    .descriptionId("fluid.lithic.acid." + acid.getId())
+                    .canConvertToSource(false),
+            new FluidTypeClientProperties(ALPHA_MASK | acid.getColor(), MOLTEN_STILL, MOLTEN_FLOW, null, null),
+            MoltenFluid.Source::new,
+            MoltenFluid.Flowing::new
+    ));
+
+    public static final Map<lithicGlass, FluidRegistryObject<ForgeFlowingFluid>> GLASS = Helpers.mapOfKeys(lithicGlass.class, glass
+            -> register(
+            "glass/" + glass.getId(),
+            properties -> properties
+                    .block(lithicBlocks.GLASS_FLUIDS.get(glass))
+                    .bucket(lithicItems.GLASS_FLUIDS_BUCKETS.get(glass))
+                    .explosionResistance(100),
+            lavaLike()
+                    .descriptionId("fluid.lithic.glass." + glass.getId())
+                    .canConvertToSource(false),
+            new FluidTypeClientProperties(ALPHA_MASK | glass.getColor(), MOLTEN_STILL, MOLTEN_FLOW, null, null),
+            MoltenFluid.Source::new,
+            MoltenFluid.Flowing::new
+    ));
+
+
     private static FluidType.Properties lavaLike()
     {
         return FluidType.Properties.create()
                 .adjacentPathType(BlockPathTypes.LAVA)
                 .sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL)
                 .sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY_LAVA)
-                .lightLevel(15)
+                .lightLevel(0)
                 .density(3000)
                 .viscosity(6000)
                 .temperature(1300)

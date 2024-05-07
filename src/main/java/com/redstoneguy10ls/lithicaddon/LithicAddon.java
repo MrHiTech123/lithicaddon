@@ -1,6 +1,7 @@
 package com.redstoneguy10ls.lithicaddon;
 
 import com.mojang.logging.LogUtils;
+//import com.redstoneguy10ls.lithicaddon.common.blockentities.lithicBlockEntities;
 import com.redstoneguy10ls.lithicaddon.common.blocks.lithicBlocks;
 import com.redstoneguy10ls.lithicaddon.common.fluids.lithicFluids;
 import com.redstoneguy10ls.lithicaddon.common.items.lithicItems;
@@ -41,6 +42,7 @@ public class LithicAddon
         lithicTab.CREATIVE_TABS.register(bus);
         lithicBlocks.BLOCKS.register(bus);
         lithicFluids.FLUIDS.register(bus);
+        //lithicBlockEntities.BLOCK_ENTITIES.register(bus);
 
         LithicRecipeSerializer.RECIPE_SERIALIZERS.register(bus);
 

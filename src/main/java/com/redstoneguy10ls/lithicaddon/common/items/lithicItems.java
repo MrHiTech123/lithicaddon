@@ -1,6 +1,8 @@
 package com.redstoneguy10ls.lithicaddon.common.items;
 
+import com.redstoneguy10ls.lithicaddon.common.fluids.lithicAcids;
 import com.redstoneguy10ls.lithicaddon.common.fluids.lithicFluids;
+import com.redstoneguy10ls.lithicaddon.common.fluids.lithicGlass;
 import com.redstoneguy10ls.lithicaddon.common.fluids.lithicMetals;
 import net.dries007.tfc.common.fluids.FluidId;
 import net.dries007.tfc.common.items.Food;
@@ -54,6 +56,18 @@ public class lithicItems {
     public static final Map<lithicMetals, RegistryObject<BucketItem>> METAL_FLUIDS_BUCKETS =
             Helpers.mapOfKeys(lithicMetals.class, fluid -> register("bucket/" + fluid.getId(),
                     () -> new BucketItem(lithicFluids.METALS.get(fluid).source(),
+                            new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)))
+            );
+
+    public static final Map<lithicAcids, RegistryObject<BucketItem>> ACID_FLUIDS_BUCKETS =
+            Helpers.mapOfKeys(lithicAcids.class, fluid -> register("bucket/" + fluid.getId(),
+                    () -> new BucketItem(lithicFluids.ACIDS.get(fluid).source(),
+                            new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)))
+            );
+
+    public static final Map<lithicGlass, RegistryObject<BucketItem>> GLASS_FLUIDS_BUCKETS =
+            Helpers.mapOfKeys(lithicGlass.class, fluid -> register("bucket/" + fluid.getId(),
+                    () -> new BucketItem(lithicFluids.GLASS.get(fluid).source(),
                             new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)))
             );
 

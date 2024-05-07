@@ -1,0 +1,12 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfc:silica_glass_batch"
+  },
+  "result_fluid": {
+    "fluid": "lithicaddon:glass/silica",
+    "amount": 100
+  },
+  "temperature": 1500
+}
