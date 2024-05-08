@@ -141,6 +141,10 @@ dependencies {
 
     implementation fg.deobf("curse.maven:kubejs-238086:5268032")
 
+    implementation fg.deobf("blusunrize.immersiveengineering:ImmersiveEngineering:1.20.1-10.1.0-171")
+
+    implementation fg.deobf("curse.maven:advanced-tfc-tech-unofficial-862559:5173491")
+
     //implementation fg.deobf("curse.maven:selene-499980:5201144")
 
     //implementation fg.deobf("curse.maven:supplementaries-412082:5225134")
