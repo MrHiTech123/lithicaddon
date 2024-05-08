@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "lithicaddon:glass/volcanic",
+    "lithicaddon:glass/olivine",
+    "lithicaddon:glass/silica",
+    "lithicaddon:glass/hematitic"
+
+  ]
+}

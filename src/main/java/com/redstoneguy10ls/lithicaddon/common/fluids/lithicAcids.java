@@ -3,7 +3,7 @@ package com.redstoneguy10ls.lithicaddon.common.fluids;
 import java.util.Locale;
 
 public enum lithicAcids {
-    NITRIC(0xDBE1E3),
+    NITRIC(0x00494B4C),
     SILVER_HALIDE(0xFFB6B2B2);
     private final String id;
     private final int color;
