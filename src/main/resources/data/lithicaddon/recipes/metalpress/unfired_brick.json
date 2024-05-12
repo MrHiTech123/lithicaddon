@@ -1,0 +1,18 @@
+{
+"__comment__": "This file was automatically created by redstoneguy10ls",
+  "type": "immersiveengineering:metal_press",
+  "energy": 2400,
+  "input": {
+    "count": 5,
+    "base_ingredient": {
+        "item": "minecraft:clay_ball"
+    }
+  },
+  "mold": "lithicaddon:mold_ingot",
+  "result": {
+    "base_ingredient": {
+      "item": "tfc:ceramic/unfired_brick"
+    },
+    "count": 3
+  }
+}

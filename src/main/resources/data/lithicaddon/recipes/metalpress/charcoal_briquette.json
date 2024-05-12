@@ -1,0 +1,18 @@
+{
+"__comment__": "This file was automatically created by redstoneguy10ls",
+  "type": "immersiveengineering:metal_press",
+  "energy": 2400,
+  "input": {
+    "count": 4,
+    "base_ingredient": {
+        "item": "tfc:powder/charcoal"
+    }
+  },
+  "mold": "lithicaddon:mold_ingot",
+  "result": {
+    "base_ingredient": {
+      "item": "lithicaddon:charcoal_briquette"
+    },
+    "count": 1
+  }
+}

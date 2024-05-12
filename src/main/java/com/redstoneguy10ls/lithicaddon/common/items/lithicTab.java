@@ -64,6 +64,14 @@ public class lithicTab {
             }
         }
 
+        accept(out, lithicItems.CHARCOAL_BRIQUETTE);
+        accept(out, lithicItems.MOLD_INGOT);
+        accept(out, lithicItems.MOLD_LAMP);
+        accept(out, lithicItems.COCOON);
+        accept(out, lithicItems.LARVA_LATTICE);
+        accept(out, lithicBlocks.MOTHBOX);
+
+
     }
 
     private static <T extends ItemLike, R extends Supplier<T>> void accept(CreativeModeTab.Output out, R reg)

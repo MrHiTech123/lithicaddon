@@ -141,9 +141,15 @@ dependencies {
 
     implementation fg.deobf("curse.maven:kubejs-238086:5268032")
 
+    runtimeOnly(fg.deobf("curse.maven:jade-324717:4614153"))
+
     implementation fg.deobf("blusunrize.immersiveengineering:ImmersiveEngineering:1.20.1-10.1.0-171")
 
     implementation fg.deobf("curse.maven:advanced-tfc-tech-unofficial-862559:5173491")
+
+    implementation fg.deobf("curse.maven:cloth-config-348521:4973441")
+
+    implementation fg.deobf("curse.maven:light-overlay-325492:4573178")
 
     //implementation fg.deobf("curse.maven:selene-499980:5201144")
 

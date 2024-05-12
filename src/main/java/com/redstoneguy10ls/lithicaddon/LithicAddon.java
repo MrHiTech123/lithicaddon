@@ -1,8 +1,10 @@
 package com.redstoneguy10ls.lithicaddon;
 
 import com.mojang.logging.LogUtils;
-//import com.redstoneguy10ls.lithicaddon.common.blockentities.lithicBlockEntities;
+import com.redstoneguy10ls.lithicaddon.client.lithicClientEventHandler;
+import com.redstoneguy10ls.lithicaddon.common.blockentities.lithicBlockEntities;
 import com.redstoneguy10ls.lithicaddon.common.blocks.lithicBlocks;
+import com.redstoneguy10ls.lithicaddon.common.container.lithicContainerTypes;
 import com.redstoneguy10ls.lithicaddon.common.fluids.lithicFluids;
 import com.redstoneguy10ls.lithicaddon.common.items.lithicItems;
 import com.redstoneguy10ls.lithicaddon.common.items.lithicTab;
@@ -42,13 +44,14 @@ public class LithicAddon
         lithicTab.CREATIVE_TABS.register(bus);
         lithicBlocks.BLOCKS.register(bus);
         lithicFluids.FLUIDS.register(bus);
-        //lithicBlockEntities.BLOCK_ENTITIES.register(bus);
+        lithicBlockEntities.BLOCK_ENTITIES.register(bus);
+        lithicContainerTypes.CONTAINERS.register(bus);
 
         LithicRecipeSerializer.RECIPE_SERIALIZERS.register(bus);
 
         if(FMLEnvironment.dist == Dist.CLIENT)
         {
-            ClientEventHandler.init();
+            lithicClientEventHandler.init();
 
         }
 

@@ -71,6 +71,17 @@ public class lithicItems {
                             new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)))
             );
 
+    public static final RegistryObject<Item> CHARCOAL_BRIQUETTE = register("charcoal_briquette", () ->
+            new briquettesItem(new Item.Properties()));
+
+    public static final RegistryObject<Item> MOLD_INGOT = register("mold_ingot");
+    public static final RegistryObject<Item> MOLD_LAMP = register("mold_lamp");
+
+    public static final RegistryObject<Item> COCOON = register("cocoon");
+
+    public static final RegistryObject<Item> LARVA_LATTICE = register("larva_lattice", () -> new larvaLatticeItem(prop().stacksTo(1)));
+
+
 
     public static final RegistryObject<Item> LITHIC = register("lithic");
 
@@ -84,6 +95,10 @@ public class lithicItems {
         return ITEMS.register(name.toLowerCase(Locale.ROOT), item);
     }
 
+    private static Item.Properties prop()
+    {
+        return new Item.Properties();
+    }
     private static Supplier<Item> basicItem() {
         return () -> new Item( new Item.Properties());
     }

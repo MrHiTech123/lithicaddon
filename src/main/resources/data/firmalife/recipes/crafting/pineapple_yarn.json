@@ -1,0 +1,25 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+    "conditions": [
+  {
+  "type": "forge:mod_loaded",
+  "modid": "firmalife"
+  }
+  ],
+  "type": "tfc:damage_inputs_shapeless_crafting",
+  "recipe": {
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+      {
+        "tag": "lithicaddon:spindles"
+      },
+      {
+        "item": "firmalife:pineapple_fiber"
+      }
+    ],
+    "result": {
+      "item": "firmalife:pineapple_yarn",
+      "count": 8
+    }
+  }
+}

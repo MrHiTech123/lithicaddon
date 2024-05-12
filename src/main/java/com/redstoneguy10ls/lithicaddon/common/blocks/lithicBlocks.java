@@ -1,5 +1,7 @@
 package com.redstoneguy10ls.lithicaddon.common.blocks;
 
+import com.redstoneguy10ls.lithicaddon.common.blockentities.lithicBlockEntities;
+import com.redstoneguy10ls.lithicaddon.common.blockentities.mothBlockEntity;
 import com.redstoneguy10ls.lithicaddon.common.fluids.lithicAcids;
 import com.redstoneguy10ls.lithicaddon.common.fluids.lithicFluids;
 import com.redstoneguy10ls.lithicaddon.common.fluids.lithicGlass;
@@ -54,16 +56,23 @@ public class lithicBlocks {
     public static final Map<Rock, Map<rockBlocks, RegistryObject<Block>>> ROCKS_BLOCKS = Helpers.mapOfKeys(Rock.class, rock ->
             Helpers.mapOfKeys(rockBlocks.class, type ->
                             register(("rock/"+type.name()+"/"+ rock.name()), () -> new Block(ExtendedProperties.of()
-                            .mapColor(rock.color()).sound(SoundType.STONE).instrument(NoteBlockInstrument.BASEDRUM).properties().strength(2f))
+                            .mapColor(rock.color()).sound(SoundType.STONE).instrument(NoteBlockInstrument.BASEDRUM).properties().strength(6.5f,10).requiresCorrectToolForDrops())
                     )
                     )
             );
     public static final Map<Rock, RegistryObject<Block>> ROCKS_PILLARS = Helpers.mapOfKeys(Rock.class, rock ->(
                     register(("rock/pillar/"+ rock.name()), () -> new
-                            ExtendedRotatedPillarBlock(ExtendedProperties.of().mapColor(rock.color()).instrument(NoteBlockInstrument.BASEDRUM).strength(2f))
+                            ExtendedRotatedPillarBlock(ExtendedProperties.of().mapColor(rock.color()).instrument(NoteBlockInstrument.BASEDRUM).strength(6.5f,10).requiresCorrectToolForDrops())
                     )
             )
     );
+    public static final RegistryObject<Block> SHH = register("shh", () -> new shh(BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL)
+            .mapColor(MapColor.COLOR_LIGHT_BLUE)
+            .forceSolidOff()
+            .noCollission()
+            .strength(0.1f)
+            .sound(SoundType.WOOL)
+            ));
 
 
     public static final RegistryObject<Block> LCANDLE_HOLDER = register("candle_holder",
@@ -77,10 +86,19 @@ public class lithicBlocks {
                     .blockEntity(TFCBlockEntities.TICK_COUNTER))
             , b -> new CandleBlockItem(new Item.Properties(), b, TFCBlocks.CANDLE_CAKE));
 
+    public static final RegistryObject<Block> MOTHBOX = register("mothbox",
+            () -> new mothboxBlock(ExtendedProperties.of()
+                    .strength(0.6f)
+                    .sound(SoundType.WOOD)
+                    .flammable(60, 30)
+                    .randomTicks()
+                    .blockEntity(lithicBlockEntities.MOTHBOX)
+                    .serverTicks(mothBlockEntity::serverTick)));
 
 
 
-//BlockBehaviour.Properties.of().mapColor(rock.color()).instrument(NoteBlockInstrument.BASEDRUM).strength(2f)
+
+    //BlockBehaviour.Properties.of().mapColor(rock.color()).instrument(NoteBlockInstrument.BASEDRUM).strength(2f)
     private static <T extends Block> RegistryObject<T> registerNoItem(String name, Supplier<T> blockSupplier)
     {
         return register(name, blockSupplier, (Function<T, ? extends BlockItem>) null);

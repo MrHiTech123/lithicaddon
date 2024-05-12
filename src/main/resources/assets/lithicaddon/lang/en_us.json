@@ -1,4 +1,5 @@
 {
+  "__comment__": "ITEMS",
   "item.lithicaddon.metal_spindle.bismuth_bronze" :  "Bismuth Bronze Spindle",
   "item.lithicaddon.metal_spindle_head.bismuth_bronze" :  "Bismuth Bronze Spindle Head",
   "item.lithicaddon.metal_spindle.black_bronze" :  "Black Bronze Spindle",
@@ -65,6 +66,20 @@
   "item.lithicaddon.stainless_steel_jar.strawberry" :  "Strawberry Jam, SS lid",
   "item.lithicaddon.aluminum_jar.wintergreen_berry" :  "Wintergreen Berry Jam, Al lid",
   "item.lithicaddon.stainless_steel_jar.wintergreen_berry" :  "Wintergreen Berry Jam, SS lid",
+  "item.lithicaddon.bucket.silver_halide": "Bucket of Silver Halide",
+  "item.lithicaddon.bucket.nitric": "Bucket of Nitric Acid",
+  "item.lithicaddon.bucket.volcanic": "Bucket of Molten Volcanic Glass",
+  "item.lithicaddon.bucket.silica":   "Bucket of Molten Silica Glass",
+  "item.lithicaddon.bucket.olivine":  "Bucket of Molten Olivine Glass",
+  "item.lithicaddon.bucket.hematic":  "Bucket of Molten Hematic Glass",
+  "item.lithicaddon.charcoal_briquette": "Charcoal Briquette",
+  "item.lithicaddon.mold_ingot": "Metal Press Mold: Ingot",
+  "item.lithicaddon.mold_lamp": "Metal Press Mold: Lamp",
+  "item.lithicaddon.larva_lattice": "Larva Lattice",
+  "item.lithicaddon.cocoon": "Silk Worm Cocoon",
+
+  "__comment__": "BLOCKS",
+
   "block.lithicaddon.rock.pillar.andesite" :  "Andesite Pillar",
   "block.lithicaddon.rock.tile.andesite" :  "Andesite Tile",
   "block.lithicaddon.rock.road.andesite" :  "Andesite Road",
@@ -125,22 +140,50 @@
   "block.lithicaddon.rock.pillar.slate" :  "Slate Pillar",
   "block.lithicaddon.rock.tile.slate" :  "Slate Tile",
   "block.lithicaddon.rock.road.slate" :  "Slate Road",
+  "block.lithicaddon.mothbox" :  "Mothbox",
 
-  "item.lithicaddon.bucket.silver_halide": "Bucket of Silver Halide",
-  "item.lithicaddon.bucket.nitric": "Bucket of Nitric Acid",
+
+  "__comment__": "fluids",
 
   "fluid.lithic.acid.silver_halide": "Silver Halide",
   "fluid.lithic.acid.nitric": "Nitric Acid",
-
-  "item.lithicaddon.bucket.volcanic": "Bucket of Molten Volcanic Glass",
-  "item.lithicaddon.bucket.silica":   "Bucket of Molten Silica Glass",
-  "item.lithicaddon.bucket.olivine":  "Bucket of Molten Olivine Glass",
-  "item.lithicaddon.bucket.hematic":  "Bucket of Molten Hematic Glass",
-
   "fluid.lithic.glass.volcanic": "Molten Volcanic Glass",
   "fluid.lithic.glass.silica": "Molten Silica Glass",
   "fluid.lithic.glass.olivine": "Molten Olivine Glass",
   "fluid.lithic.glass.hematitic": "Molten Hematitic Glass",
+
+
+  "block.lithicaddon.shh" :  "BLAHAJ",
+
+  "__comment__": "text",
+
+  "lithic.moth.larva": "Larva ",
+  "lithic.moth.till_cocoon": "Days till cocoon: %s ",
+  "lithic.moth.cocoon": "Cocoon",
+  "lithic.moth.no_larva": "No Larva",
+  "lithic.moth.empty": "Empty",
+  "lithic.moth.scrape": "Right click with a knife to scrape",
+  "lithic.moth.leaves": "There is %s leaves left ",
+  "lithic.moth.no_leaves": "There are no leaves left ",
+  "lithic.moth.lattices": "Lattice %s :",
+  "lithic.moth.has_larva": "Has Larva ",
+  "lithic.moth.too_hot": "Too hot! Maximum: %s C, Current: %s C ",
+  "lithic.moth.too_cold": "Too cold! Minimum: %s C, Current: %s C ",
+  "lithic.moth.too_wet": "Too wet! Maximum: %s mm, Current: %s mm ",
+  "lithic.moth.too_dry": "Too dry! Minimum: %s mm, Current: %s mm ",
+  "lithic.moth.lights": "Lights: %s",
+  "lithic.moth.too_dim": "Light sources are not bright enough!",
+  "lithic.moth.min_lights": "Not enough light!",
+  "lithic.moth.larva_chance_100": "Daily New Larva Chance: Gaurenteed",
+  "lithic.moth.larva_chance": "Daily New Larva Chance: 1 / %s",
+
+
+
+
+
+
+  "lithicaddon.block_entity.mothbox": "Moth Box",
+
 
   "lithicaddon.creative_tab.lithic": "Lithic Addon Tab"
 }

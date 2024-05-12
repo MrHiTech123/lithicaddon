@@ -1,0 +1,15 @@
+{
+"__comment__": "This file was automatically created by redstoneguy10ls",
+  "type": "immersiveengineering:metal_press",
+  "energy": 2400,
+  "input": {
+    "tag": "forge:ingots/blue_steel"
+  },
+  "mold": "lithicaddon:mold_lamp",
+  "result": {
+    "base_ingredient": {
+      "item": "tfc:metal/unfinished_lamp/blue_steel"
+    },
+    "count": 1
+  }
+}
