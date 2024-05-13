@@ -1,0 +1,11 @@
+{
+  "__comment__": "This file was automatically created by redstoneguy10ls",
+  "ingredient": {
+    "item": "lithicaddon:food/boiled_grub"
+  },
+  "category": "meat",
+  "hunger": 4,
+  "saturation": 0.5,
+  "decay_modifier": 2,
+	"protein": 1
+}

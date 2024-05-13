@@ -72,6 +72,7 @@ public class lithicBlocks {
             .noCollission()
             .strength(0.1f)
             .sound(SoundType.WOOL)
+
             ));
 
 

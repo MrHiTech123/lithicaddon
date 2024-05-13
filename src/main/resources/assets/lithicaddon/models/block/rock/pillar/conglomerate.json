@@ -1,25 +1,8 @@
 {
-	"credit": "Made with Blockbench",
-  "parent": "lithicaddon:block/rock/base_block",
+    "__comment__": "This file was automatically created by redstoneguy10ls",
+    "parent": "block/cube_column",
 	"textures": {
-        
-		"3": "lithicaddon:block/rock/pillar/conglomeratetop",
-		"4": "lithicaddon:block/rock/pillar/conglomerate",
-        "particle": "tfc:block/rock/raw/conglomerate"
-	},
-	"elements": [
-		{
-			"from": [0, 0, 0],
-			"to": [16, 16, 16],
-			"faces": {
-				"north": {"uv": [0, 0, 16, 16], "texture": "#4"},
-				"east": {"uv": [0, 0, 16, 16], "texture": "#4"},
-				"south": {"uv": [0, 0, 16, 16], "texture": "#4"},
-				"west": {"uv": [0, 0, 16, 16], "texture": "#4"},
-				"up": {"uv": [0, 0, 16, 16], "texture": "#3"},
-				"down": {"uv": [0, 0, 16, 16], "texture": "#3"}
-			}
-		}
-	]
+		"end": "lithicaddon:block/rock/pillar/conglomeratetop",
+		"side": "lithicaddon:block/rock/pillar/conglomerate"
+	}         
 }
-  

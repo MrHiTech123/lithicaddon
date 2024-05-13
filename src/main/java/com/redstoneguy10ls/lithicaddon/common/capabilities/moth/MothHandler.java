@@ -20,6 +20,8 @@ public class MothHandler implements IMoth, ICapabilitySerializable<CompoundTag> 
 
     private boolean hasLarva;
 
+    private boolean hasCocoon;
+
     private int daysAlive = 0;
     private boolean initialized = false;
 
@@ -29,6 +31,7 @@ public class MothHandler implements IMoth, ICapabilitySerializable<CompoundTag> 
         capability = LazyOptional.of(() -> this);
         hasLarva = false;
         this.stack = stack;
+        hasCocoon = false;
     }
 
     @Override
@@ -40,6 +43,17 @@ public class MothHandler implements IMoth, ICapabilitySerializable<CompoundTag> 
     public void setDaysAlive(int value) {
         daysAlive = value;
         save();
+    }
+
+    @Override
+    public void setHasCocoon(boolean exists) {
+        hasCocoon = exists;
+        save();
+    }
+
+    @Override
+    public boolean hasCocoon() {
+        return hasCocoon;
     }
 
     @Override
@@ -72,6 +86,7 @@ public class MothHandler implements IMoth, ICapabilitySerializable<CompoundTag> 
             final CompoundTag tag = stack.getOrCreateTag();
             if(tag.contains("larva"))
             {
+                hasCocoon = tag.getBoolean("cocoon");
                 hasLarva = tag.getBoolean("larva");
                 daysAlive = tag.getInt("daysAlive");
             }
@@ -82,13 +97,14 @@ public class MothHandler implements IMoth, ICapabilitySerializable<CompoundTag> 
     {
         final CompoundTag tag = stack.getOrCreateTag();
         tag.putBoolean("larva", hasLarva);
+        tag.putBoolean("cocoon", hasCocoon);
         tag.putInt("daysAlive", daysAlive);
     }
 
     @Override
     public void addTooltipInfo(ItemStack stack, List<Component> tooltip)
     {
-        if(daysAlive() >= DAYS_TILL_COCOON)
+        if(hasCocoon())
         {
             tooltip.add(Component.translatable("lithic.moth.cocoon").withStyle(ChatFormatting.GOLD));
 

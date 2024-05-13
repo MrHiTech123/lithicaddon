@@ -77,6 +77,9 @@
   "item.lithicaddon.mold_lamp": "Metal Press Mold: Lamp",
   "item.lithicaddon.larva_lattice": "Larva Lattice",
   "item.lithicaddon.cocoon": "Silk Worm Cocoon",
+  "item.lithicaddon.boiled_cocoon": "Boiled Silk Worm Cocoon",
+  "item.lithicaddon.food.boiled_grub": "Boiled Silk Worm",
+  "item.lithicaddon.ball_of_silk": "Bundle of String",
 
   "__comment__": "BLOCKS",
 
@@ -162,10 +165,11 @@
   "lithic.moth.cocoon": "Cocoon",
   "lithic.moth.no_larva": "No Larva",
   "lithic.moth.empty": "Empty",
-  "lithic.moth.scrape": "Right click with a knife to scrape",
+  "lithic.moth.pull": "Right click with an empty hand to pull cocoons off",
+  "lithic.moth.scrape": "Right click with a knife to cut open",
   "lithic.moth.leaves": "There is %s leaves left ",
   "lithic.moth.no_leaves": "There are no leaves left ",
-  "lithic.moth.lattices": "Lattice %s :",
+  "lithic.moth.lattices": "Lattice %s: ",
   "lithic.moth.has_larva": "Has Larva ",
   "lithic.moth.too_hot": "Too hot! Maximum: %s C, Current: %s C ",
   "lithic.moth.too_cold": "Too cold! Minimum: %s C, Current: %s C ",

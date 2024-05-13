@@ -4,6 +4,7 @@ import com.redstoneguy10ls.lithicaddon.common.blocks.mothboxBlock;
 import com.redstoneguy10ls.lithicaddon.common.capabilities.moth.IMoth;
 import com.redstoneguy10ls.lithicaddon.common.capabilities.moth.MothCapability;
 import com.redstoneguy10ls.lithicaddon.common.container.mothboxContainer;
+import com.redstoneguy10ls.lithicaddon.config.lithicConfig;
 import com.redstoneguy10ls.lithicaddon.util.lithicTags;
 import net.dries007.tfc.common.blockentities.TickableInventoryBlockEntity;
 import net.dries007.tfc.common.capabilities.PartialItemHandler;
@@ -15,6 +16,7 @@ import net.dries007.tfc.util.climate.Climate;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.Tag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -23,9 +25,16 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LightLayer;
+import net.minecraft.world.level.block.AbstractGlassBlock;
+import net.minecraft.world.level.block.AirBlock;
+import net.minecraft.world.level.block.HalfTransparentBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Random;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import static com.redstoneguy10ls.lithicaddon.LithicAddon.MOD_ID;
 
@@ -43,17 +52,17 @@ public class mothBlockEntity extends TickableInventoryBlockEntity<ItemStackHandl
         }
     }
 
-    public static final int MIN_LIGHT_LEVEL = 11;
+    public static final int MIN_LIGHT_LEVEL = Helpers.getValueOrDefault(lithicConfig.SERVER.minLightLevel);
 
-    public static final int MIN_LIGHTS = 10;
+    public static final int MIN_LIGHTS = Helpers.getValueOrDefault(lithicConfig.SERVER.minLights);
 
-    public static final float MIN_TEMP = -19;
+    public static final float MIN_TEMP = Helpers.getValueOrDefault(lithicConfig.SERVER.mintemp).floatValue();
 
-    public static final float MAX_TEMP = 26;
+    public static final float MAX_TEMP = Helpers.getValueOrDefault(lithicConfig.SERVER.maxtemp).floatValue();
 
-    public static final float MIN_RAIN = 10;
+    public static final float MIN_RAIN = Helpers.getValueOrDefault(lithicConfig.SERVER.minrain).floatValue();
 
-    public static final float MAX_RAIN = 500;
+    public static final float MAX_RAIN = Helpers.getValueOrDefault(lithicConfig.SERVER.maxrain).floatValue();
 
     public static final int UPDATE_INTERVAL = ICalendar.TICKS_IN_DAY;
     public static final int SLOTS = 5;
@@ -74,8 +83,9 @@ public class mothBlockEntity extends TickableInventoryBlockEntity<ItemStackHandl
         leaves = 0;
 
         sidedInventory
-                .on(new PartialItemHandler(inventory).insert(0, 1, 2, 3), Direction.Plane.HORIZONTAL)
-                .on(new PartialItemHandler(inventory).extract(0, 1, 2, 3), Direction.DOWN);
+                .on(new PartialItemHandler(inventory).insert(0), Direction.Plane.VERTICAL)
+                .on(new PartialItemHandler(inventory).insert(1, 2, 3, 4), Direction.Plane.HORIZONTAL)
+                .on(new PartialItemHandler(inventory).extract(0, 1, 2, 3, 4), Direction.DOWN);
     }
 
     @Override
@@ -172,6 +182,10 @@ public class mothBlockEntity extends TickableInventoryBlockEntity<ItemStackHandl
                             if((moth.getDaysTillCocoon() > moth.daysAlive())) {
                                 removeLeaves();
                             }
+                            else if(moth.getDaysTillCocoon() <= moth.daysAlive())
+                            {
+                                moth.setHasCocoon(true);
+                            }
                             moth.setDaysAlive(moth.daysAlive() + 1);
                         } else if (uninitializedMoth == null) {
                             uninitializedMoth = moth;
@@ -182,8 +196,34 @@ public class mothBlockEntity extends TickableInventoryBlockEntity<ItemStackHandl
                     uninitializedMoth.initLarva();
                 }
             }
+            else//keep growing even without lights
+            {
+                if(leaves > 0) {
+                    for (int i = 1; i < SLOTS; i++) {
+                        final IMoth moth = inventory.getStackInSlot(i).getCapability(MothCapability.CAPABILITY).resolve().orElse(null);
+
+                            if (moth != null)
+                            {
+                                if(moth.hasLarva())
+                                {
+                                    if(moth.getDaysTillCocoon() > moth.daysAlive())
+                                    {
+                                        removeLeaves();
+                                    }
+                                    else if(moth.getDaysTillCocoon() <= moth.daysAlive())
+                                    {
+                                        moth.setHasCocoon(true);
+                                    }
+                                    moth.setDaysAlive(moth.daysAlive()+1);
+                                }
+                            }
+                    }
+                }
+            }
         }
     }
+
+
 
     public int getLight()
     {
@@ -195,36 +235,25 @@ public class mothBlockEntity extends TickableInventoryBlockEntity<ItemStackHandl
         {
             for (BlockPos pos : BlockPos.betweenClosed(min,max))
             {
-                final BlockState state = level.getBlockState(pos);
+                final BlockState state = level.getBlockState(pos.offset(0,-1,0));
+                //final BlockState state = level.getBlockState(pos);
 
                 if(level.getBrightness(LightLayer.BLOCK, pos) >= MIN_LIGHT_LEVEL){
-                    lights++;
+                    //(state.getBlock() instanceof HalfTransparentBlock) || (state.getBlock() instanceof AirBlock)
+                    if(state.propagatesSkylightDown(level, pos))
+                    {
+
+                    }
+                    else
+                    {
+                        lights++;
+                    }
 
                 }
             }
 
         }
         return lights;
-    }
-
-    public int getDimLight()
-    {
-        assert level != null;
-        int dimlights = 0;
-        final BlockPos min = worldPosition.offset(-5, -5, -5);
-        final BlockPos max = worldPosition.offset(5, 5, 5);
-        if(level.hasChunksAt(min, max))
-        {
-            for (BlockPos pos : BlockPos.betweenClosed(min,max))
-            {
-                final BlockState state = level.getBlockState(pos);
-                if(level.getBrightness(LightLayer.BLOCK, pos) < MIN_LIGHT_LEVEL){
-                    dimlights++;
-                }
-            }
-
-        }
-        return dimlights;
     }
 
     public void setLeaves(int value)
@@ -234,7 +263,12 @@ public class mothBlockEntity extends TickableInventoryBlockEntity<ItemStackHandl
 
     public void removeLeaves()
     {
-        inventory.getStackInSlot(0).shrink(1);
+        Random rand = new Random();
+        int rands = rand.nextInt(100 - 0 + 1)+ 0;
+        if(rands <= Helpers.getValueOrDefault(lithicConfig.SERVER.mothEatChance))
+        {
+            inventory.getStackInSlot(0).shrink(1);
+        }
         setLeaves(calculateLeaves());
     }
 
@@ -250,9 +284,9 @@ public class mothBlockEntity extends TickableInventoryBlockEntity<ItemStackHandl
 
     public int getBreedTickChanceInverted(int lights)
     {
-        int chance = 60;
+        int chance = 100;
 
-        return Math.max(0, chance - Math.min(lights, 60));
+        return Math.max(0, chance - Math.min(lights, 100));
     }
 
     public void updateState()

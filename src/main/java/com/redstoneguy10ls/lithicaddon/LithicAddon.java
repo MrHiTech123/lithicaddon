@@ -9,6 +9,7 @@ import com.redstoneguy10ls.lithicaddon.common.fluids.lithicFluids;
 import com.redstoneguy10ls.lithicaddon.common.items.lithicItems;
 import com.redstoneguy10ls.lithicaddon.common.items.lithicTab;
 import com.redstoneguy10ls.lithicaddon.common.recipe.LithicRecipeSerializer;
+import com.redstoneguy10ls.lithicaddon.config.lithicConfig;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -23,6 +24,8 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLEnvironment;
 import org.slf4j.Logger;
 
+import java.util.Scanner;
+
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(LithicAddon.MOD_ID)
 public class LithicAddon
@@ -33,6 +36,9 @@ public class LithicAddon
     private static final Logger LOGGER = LogUtils.getLogger();
     public LithicAddon()
     {
+
+        lithicConfig.init();
+
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
         bus.addListener(this::commonSetup);

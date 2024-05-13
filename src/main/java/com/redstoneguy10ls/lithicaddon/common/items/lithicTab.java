@@ -67,11 +67,14 @@ public class lithicTab {
         accept(out, lithicItems.CHARCOAL_BRIQUETTE);
         accept(out, lithicItems.MOLD_INGOT);
         accept(out, lithicItems.MOLD_LAMP);
+
         accept(out, lithicItems.COCOON);
+        accept(out, lithicItems.BOILED_COCOON);
+        accept(out, lithicItems.BALL_OF_SILK);
         accept(out, lithicItems.LARVA_LATTICE);
         accept(out, lithicBlocks.MOTHBOX);
 
-
+        lithicItems.FOODS.values().forEach(reg -> accept(out, reg));
     }
 
     private static <T extends ItemLike, R extends Supplier<T>> void accept(CreativeModeTab.Output out, R reg)

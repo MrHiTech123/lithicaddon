@@ -7,10 +7,6 @@
     "defaultRequire": 1
   },
   "mixins": [
-      "BeamHouseMixin",
-      "ThresherMixin",
-      "GristMillMixin"
-
   ],
   "refmap": "lithicaddon.refmap.json"
 }

@@ -45,6 +45,7 @@
     "lithicaddon:aluminum_jar/strawberry",
     "lithicaddon:stainless_steel_jar/strawberry",
     "lithicaddon:aluminum_jar/wintergreen_berry",
-    "lithicaddon:stainless_steel_jar/wintergreen_berry"
+    "lithicaddon:stainless_steel_jar/wintergreen_berry",
+    "lithicaddon:food/boiled_grub"
   ]
 }

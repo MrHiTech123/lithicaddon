@@ -71,10 +71,11 @@ public class mothboxBlock extends DeviceBlock implements HoeOverlayBlock {
     @Override
     public void addHoeOverlayInfo(Level level, BlockPos pos, BlockState blockState, List<Component> text, boolean debug)
     {
+
         level.getBlockEntity(pos, lithicBlockEntities.MOTHBOX.get()).ifPresent(box -> {
+            box.calculateLeaves();
             if(box.getLeaves() > 0)
             {
-                box.calculateLeaves();
                 text.add(Component.translatable("lithic.moth.leaves",String.valueOf(box.getLeaves())).withStyle(ChatFormatting.GREEN));
             }
             else
@@ -101,7 +102,7 @@ public class mothboxBlock extends DeviceBlock implements HoeOverlayBlock {
                     //if has larva
                     if (moth != null && moth.hasLarva()) {
                         mothText.append(Component.translatable("lithic.moth.has_larva"));
-                        if (moth.getDaysTillCocoon() > moth.daysAlive()) {
+                        if (!moth.hasCocoon()) {
                             mothText.append(Component.translatable("lithic.moth.till_cocoon",
                                     String.valueOf(moth.getDaysTillCocoon() - moth.daysAlive())).withStyle(ChatFormatting.WHITE));
                         } else {
@@ -138,28 +139,21 @@ public class mothboxBlock extends DeviceBlock implements HoeOverlayBlock {
                 }
             }
             final int lights = box.getLight();
-            final int dimLights = box.getDimLight();
             text.add(Component.translatable("lithic.moth.lights",  lights));
             //checks how many light blocks are around
             if(lights < mothBlockEntity.MIN_LIGHTS)
             {
-                //if theres more dim lights than the minimum amount of light required aka if theres enough light but its to dim
-                //then say that
-                if(dimLights >= mothBlockEntity.MIN_LIGHTS)
-                {
-                    text.add(Component.translatable("lithic.moth.too_dim"));
-                }
-                else {
                     text.add(Component.translatable("lithic.moth.min_lights"));
-                }
+
             }
             else
             {
-                if(moths.size() < 5)
-                {
-                    int breed = box.getBreedTickChanceInverted(lights);
-                    if (breed == 0) text.add(Component.translatable("lithic.moth.larva_chance_100"));
-                    else text.add(Component.translatable("lithic.moth.larva_chance", breed));
+                if(moths.size() < 5) {
+                    if(box.calculateLeaves() > 0){
+                            int breed = box.getBreedTickChanceInverted(lights);
+                            if (breed == 0) text.add(Component.translatable("lithic.moth.larva_chance_100"));
+                            else text.add(Component.translatable("lithic.moth.larva_chance", breed));
+                    }
                 }
             }
 

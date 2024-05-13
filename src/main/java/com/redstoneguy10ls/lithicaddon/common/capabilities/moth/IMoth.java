@@ -1,5 +1,7 @@
 package com.redstoneguy10ls.lithicaddon.common.capabilities.moth;
 
+import com.redstoneguy10ls.lithicaddon.config.lithicConfig;
+import net.dries007.tfc.util.Helpers;
 import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -10,7 +12,7 @@ import java.util.List;
 
 public interface IMoth extends INBTSerializable<CompoundTag> {
 
-    int DAYS_TILL_COCOON =22;
+    int DAYS_TILL_COCOON = Helpers.getValueOrDefault(lithicConfig.SERVER.daysTillCocoon);
 
     int daysAlive();
 
@@ -21,6 +23,11 @@ public interface IMoth extends INBTSerializable<CompoundTag> {
     void setHasLarva(boolean exists);
 
     boolean hasLarva();
+
+    boolean hasCocoon();
+
+    void setHasCocoon(boolean exists);
+
 
     default void initLarva()
     {
@@ -34,7 +41,7 @@ public interface IMoth extends INBTSerializable<CompoundTag> {
         if(hasLarva())
         {
             tooltip.add(Component.translatable("lithic.moth.larva").withStyle(ChatFormatting.GOLD));
-            if(daysAlive() >= DAYS_TILL_COCOON)
+            if(hasCocoon())
             {
                 tooltip.add(Component.translatable("lithic.moth.cocoon").withStyle(ChatFormatting.GOLD));
 

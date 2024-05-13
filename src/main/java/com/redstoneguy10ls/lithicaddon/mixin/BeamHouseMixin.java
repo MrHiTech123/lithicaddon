@@ -1,5 +1,5 @@
 package com.redstoneguy10ls.lithicaddon.mixin;
-
+/*
 import blusunrize.immersiveengineering.api.multiblocks.blocks.env.IMultiblockContext;
 import blusunrize.immersiveengineering.common.util.sound.MultiblockSound;
 import com.hermitowo.advancedtfctech.client.ATTSounds;
@@ -17,10 +17,7 @@ public abstract class BeamHouseMixin {
 
     private BooleanSupplier isPlayingSound = () -> false;
 
-    /**
-     * @author
-     * @reason
-     */
+
     @Overwrite(remap=false)
     public void tickClient(IMultiblockContext<BeamhouseLogic.State> context)
     {
@@ -37,3 +34,4 @@ public abstract class BeamHouseMixin {
     }
 
 }
+*/

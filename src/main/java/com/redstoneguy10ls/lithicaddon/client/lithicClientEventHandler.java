@@ -44,6 +44,8 @@ public class lithicClientEventHandler {
 
             ItemProperties.register(lithicItems.LARVA_LATTICE.get(), new ResourceLocation(MOD_ID, "larva"),
                     (stack, a, b, c) -> stack.getCapability(MothCapability.CAPABILITY).map(IMoth::hasLarva).orElse(false) ? 1f: 0f);
+            ItemProperties.register(lithicItems.LARVA_LATTICE.get(), new ResourceLocation(MOD_ID, "cocoon"),
+                    (stack, a, b, c) -> stack.getCapability(MothCapability.CAPABILITY).map(IMoth::hasCocoon).orElse(false) ? 1f: 0f);
         });
     }
     private static void onTooltip(ItemTooltipEvent event)

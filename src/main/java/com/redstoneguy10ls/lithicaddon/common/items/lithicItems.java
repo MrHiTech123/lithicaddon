@@ -11,6 +11,7 @@ import net.dries007.tfc.common.items.ToolItem;
 import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.util.Metal;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -78,8 +79,15 @@ public class lithicItems {
     public static final RegistryObject<Item> MOLD_LAMP = register("mold_lamp");
 
     public static final RegistryObject<Item> COCOON = register("cocoon");
+    public static final RegistryObject<Item> BOILED_COCOON = register("boiled_cocoon", () -> new boiledCacoon(prop()));
+    public static final RegistryObject<Item> BALL_OF_SILK = register("ball_of_silk");
+
 
     public static final RegistryObject<Item> LARVA_LATTICE = register("larva_lattice", () -> new larvaLatticeItem(prop().stacksTo(1)));
+
+    public static final Map<lithicFood, RegistryObject<Item>> FOODS =
+            Helpers.mapOfKeys(lithicFood.class, food -> register("food/"+ food.name(),
+                    () -> new Item(new Item.Properties().food(food.getFoodProperties()))));
 
 
 
@@ -101,5 +109,10 @@ public class lithicItems {
     }
     private static Supplier<Item> basicItem() {
         return () -> new Item( new Item.Properties());
+    }
+
+    private static Item.Properties foodProperties()
+    {
+        return new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.3f).build());
     }
 }

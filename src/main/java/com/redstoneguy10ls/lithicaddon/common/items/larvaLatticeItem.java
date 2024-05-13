@@ -30,12 +30,12 @@ public class larvaLatticeItem extends Item {
     @Override
     public boolean overrideOtherStackedOnMe(ItemStack stack, ItemStack other, Slot slot, ClickAction action, Player player, SlotAccess carried)
     {
-        if (action == ClickAction.SECONDARY && Helpers.isItem(other, TFCTags.Items.KNIVES))
+        if (action == ClickAction.SECONDARY && other.isEmpty())
         {
 
             AtomicInteger rands = new AtomicInteger(player.getRandom().nextIntBetweenInclusive(1, 8));
             return stack.getCapability(MothCapability.CAPABILITY).map(moth ->{
-                if(moth.hasLarva() && moth.daysAlive()>= moth.getDaysTillCocoon())
+                if(moth.hasLarva() && moth.hasCocoon())
                 {
                     slot.set(new ItemStack(this));
                     while(rands.get() > 0)
@@ -43,7 +43,7 @@ public class larvaLatticeItem extends Item {
                         ItemHandlerHelper.giveItemToPlayer(player, new ItemStack(lithicItems.COCOON.get()));
                         rands.getAndDecrement();
                     }
-                    other.hurtAndBreak(1,player, p -> {});
+                    return true;
                 }
                 return false;
             }).orElse(false);
@@ -57,7 +57,7 @@ public class larvaLatticeItem extends Item {
         stack.getCapability(MothCapability.CAPABILITY).ifPresent(moth -> {
             if (moth.daysAlive() >= moth.getDaysTillCocoon())
             {
-                tooltip.add(Component.translatable("lithic.moth.scrape").withStyle(ChatFormatting.WHITE));
+                tooltip.add(Component.translatable("lithic.moth.pull").withStyle(ChatFormatting.WHITE));
             }
         });
     }

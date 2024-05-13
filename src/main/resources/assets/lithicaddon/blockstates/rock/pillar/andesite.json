@@ -1,16 +1,18 @@
 {
-  "__comment__": "This file was automatically created by redstoneguy10ls",
-    "variants": {
-      "axis=x": {
+    "__comment__": "This file was automatically created by redstoneguy10ls",
+      "variants": {
+    "axis=x": {
       "model": "lithicaddon:block/rock/pillar/andesite_horizontal",
+      "x": 90,
       "y": 90
     },
     "axis=y": {
       "model": "lithicaddon:block/rock/pillar/andesite"
     },
     "axis=z": {
-      "model": "lithicaddon:block/rock/pillar/andesite_horizontal"
+      "model": "lithicaddon:block/rock/pillar/andesite_horizontal",
+      "x": 90
     }
   }
+       
 }
-  

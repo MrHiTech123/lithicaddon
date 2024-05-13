@@ -1,7 +1,18 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "lithicaddon:item/larva_lattice"
-  }
+  "parent": "lithicaddon:item/larva_lattice_nothing",
+  "overrides": [
+    {
+      "predicate": {
+        "lithicaddon:larva": 1
+      },
+      "model": "lithicaddon:item/larva_lattice_larva"
+    },
+    {
+      "predicate": {
+        "lithicaddon:cocoon": 1
+      },
+      "model": "lithicaddon:item/larva_lattice_cocoon"
+    }
+  ]
 }
