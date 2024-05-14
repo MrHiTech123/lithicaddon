@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
-    "tfc:burlap_cloth"
+    {
+      "id": "firmalife:fruit_leaf",
+      "required": false
+    }
   ]
 }
