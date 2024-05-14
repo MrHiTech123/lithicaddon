@@ -1,0 +1,18 @@
+{
+  "__comment__": "This file was automatically created by redstoneguy10ls",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "s s",
+    " s ",
+    "s s"
+  ],
+  "key": {
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "lithicaddon:larva_lattice",
+    "count": 1
+  }
+}
