@@ -2,7 +2,7 @@
   "__comment__": "This file was automatically created by mcresources",
   "type": "tfc:no_remainder_shapeless_crafting",
   "recipe": {
-    "type": "minecraft:crafting_shapeless",
+    "type": "tfc:advanced_shapeless_crafting",
     "ingredients": [
       {
         "item": "tfc:jar/olive_unsealed"
@@ -12,7 +12,15 @@
       }
     ],
     "result": {
-      "item": "lithicaddon:stainless_steel_jar/olive"
+      "stack": {
+        "item": "lithicaddon:stainless_steel_jar/olive"
+      },
+      "modifiers": [
+        "tfc:copy_food"
+      ]
+    },
+    "primary_ingredient": {
+      "item": "tfc:jar/olive_unsealed"
     }
   }
 }

@@ -2,7 +2,7 @@
   "__comment__": "This file was automatically created by mcresources",
   "type": "tfc:no_remainder_shapeless_crafting",
   "recipe": {
-    "type": "minecraft:crafting_shapeless",
+    "type": "tfc:advanced_shapeless_crafting",
     "ingredients": [
       {
         "item": "tfc:jar/melon_slice_unsealed"
@@ -12,7 +12,15 @@
       }
     ],
     "result": {
-      "item": "tfc:jar/melon_slice"
+      "stack": {
+        "item": "tfc:jar/melon_slice"
+      },
+      "modifiers": [
+        "tfc:copy_food"
+      ]
+    },
+    "primary_ingredient": {
+      "item": "tfc:jar/melon_slice_unsealed"
     }
   }
 }

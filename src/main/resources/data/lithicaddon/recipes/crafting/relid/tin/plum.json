@@ -2,7 +2,7 @@
   "__comment__": "This file was automatically created by mcresources",
   "type": "tfc:no_remainder_shapeless_crafting",
   "recipe": {
-    "type": "minecraft:crafting_shapeless",
+    "type": "tfc:advanced_shapeless_crafting",
     "ingredients": [
       {
         "item": "tfc:jar/plum_unsealed"
@@ -12,7 +12,15 @@
       }
     ],
     "result": {
-      "item": "tfc:jar/plum"
+      "stack": {
+        "item": "tfc:jar/plum"
+      },
+      "modifiers": [
+        "tfc:copy_food"
+      ]
+    },
+    "primary_ingredient": {
+      "item": "tfc:jar/plum_unsealed"
     }
   }
 }
