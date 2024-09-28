@@ -1,19 +1,18 @@
 {
-  "__comment__": "This file was automatically created by redstoneguy10ls",
-      "type": "minecraft:crafting_shapeless",
-      "ingredients": [
-        {
-          "type": "tfc:not_rotten",
-          "ingredient": {
-            "item": "tfc:jar/olive_unsealed"
-          }
-        },
-        {
-          "item": "lithicaddon:stainless_steel_lid"
-        }
-      ],
-      "result": {
-        "item": "lithicaddon:stainless_steel_jar/olive"
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:no_remainder_shapeless_crafting",
+  "recipe": {
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+      {
+        "item": "tfc:jar/olive_unsealed"
+      },
+      {
+        "item": "lithicaddon:stainless_steel_lid"
       }
+    ],
+    "result": {
+      "item": "lithicaddon:stainless_steel_jar/olive"
+    }
+  }
 }
-  
