@@ -1,25 +1,8 @@
 {
-  "__comment__": "This file was automatically created by redstoneguy10ls",
-  "type": "lithicaddon:jar_recipe",
-    "break_chance": 0.75,
-    "lid": [
-      {
-        "item": "tfc:jar_lid"
-      }
-    ],
-    "recipe":{
-      "type": "minecraft:crafting_shapeless",
-      "ingredients": [
-        {
-          "type": "tfc:not_rotten",
-          "ingredient": {
-            "item": "tfc:jar/cranberry"
-          }
-        }
-      ],
-      "result": {
-        "item": "tfc:jar/cranberry_unsealed"
-      }
+  "__comment__": "This file was automatically created by mcresources",
+  "conditions": [
+    {
+      "type": "forge:false"
     }
+  ]
 }
-  

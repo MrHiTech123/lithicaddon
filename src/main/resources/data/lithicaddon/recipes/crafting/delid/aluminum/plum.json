@@ -1,25 +1,28 @@
 {
-  "__comment__": "This file was automatically created by redstoneguy10ls",
-  "type": "lithicaddon:jar_recipe",
-    "break_chance": 0.5,
-    "lid": [
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:extra_products_shapeless_crafting",
+  "extra_products": [
+    {
+      "item": "lithicaddon:aluminum_lid"
+    }
+  ],
+  "recipe": {
+    "type": "tfc:advanced_shapeless_crafting",
+    "ingredients": [
       {
-        "item": "lithicaddon:aluminum_lid"
+        "item": "lithicaddon:aluminum_jar/plum"
       }
     ],
-    "recipe":{
-      "type": "minecraft:crafting_shapeless",
-      "ingredients": [
-        {
-          "type": "tfc:not_rotten",
-          "ingredient": {
-            "item": "lithicaddon:aluminum_jar/plum"
-          }
-        }
-      ],
-      "result": {
+    "result": {
+      "stack": {
         "item": "tfc:jar/plum_unsealed"
-      }
+      },
+      "modifiers": [
+        "tfc:copy_food"
+      ]
+    },
+    "primary_ingredient": {
+      "item": "lithicaddon:aluminum_jar/plum"
     }
+  }
 }
-  
